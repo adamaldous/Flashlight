@@ -9,6 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var button: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,9 +27,11 @@ class ViewController: UIViewController {
     @IBAction func buttonTapped(sender: AnyObject) {
         if isOn {
             self.view.backgroundColor = UIColor.whiteColor()
+            button.setTitle("OFF", forState: UIControlState.Normal)
             isOn = false
         } else {
             self.view.backgroundColor = UIColor.blackColor()
+            button.setTitle("ON", forState: UIControlState.Normal)
             isOn = true
         }
     }
